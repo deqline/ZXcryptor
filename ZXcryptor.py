@@ -349,9 +349,10 @@ def main():
 	end = time.time()
 	total = (end-start) % 60
 
-	print("\n[!] Successfully applied encryption on %s in %d seconds." % (path, total))
+	print("[!] Successfully applied encryption on %s in %d seconds.\n" % (path, total))
 	print("Updated size: %d Bytes" % len(FileBytes))
-
-
+	
+	os.system("pause")
+	
 if __name__ == "__main__":
     main()
