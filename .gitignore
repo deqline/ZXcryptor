@@ -1,0 +1,8 @@
+!.gitignore
+__pycache__
+build
+compile.bat
+ZEncryptor.spec
+ICON.ico
+bin/
+misc/
