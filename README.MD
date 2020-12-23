@@ -1,5 +1,5 @@
 ## ZXCRYPTOR
-A simple lightweight, windows executable encryptor POC made in python.
+A simple, lightweight windows executable encryptor and shellcode injector made in python.
 
 ## How to run
 - Make an exe out of the python file using `pyinstaller`
