@@ -288,8 +288,10 @@ def main():
 	if(len(findSectionEntry(fileStream, b'.text')) == 0): crash("Could not find needed sections")
 
 	(size, offset) = findSectionEntry(fileStream, b'.text')
-
-	bytes_array = Encrypt(fileStream[offset:offset+size],0xF3, 0xFF, 0x43, 0xDE, 0x10, 0x80)
+	
+	xor_key = bytes([0xF3, 0xFF, 0x43, 0xDE, 0x10, 0x80])
+	
+	bytes_array = Encrypt(fileStream[offset:offset+size],xor_key)
 
 	print("[!] Applying encryption")
 
