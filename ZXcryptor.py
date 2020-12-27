@@ -298,6 +298,10 @@ def main():
 	file.seek(offset, 0)
 	file.write(bytearray(bytes_array))
 	file.seek(0)
+	
+	print("[!] File was succesfully encrypted")
+	
+	print("[!] Trying to add custom payload")
 
 	print("[!] Allocating strings")
 	string1 	= AllocInitializedDataSpace(file, fileStream, "ZXCRYPTED")
