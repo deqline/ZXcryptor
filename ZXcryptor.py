@@ -289,9 +289,7 @@ def main():
 
 	(size, offset) = findSectionEntry(fileStream, b'.text')
 	
-	xor_key = bytes([0xF3, 0xFF, 0x43, 0xDE, 0x10, 0x80])
-	
-	bytes_array = Encrypt(fileStream[offset:offset+size],xor_key)
+	bytes_array = Encrypt(fileStream[offset:offset+size],0xF3, 0xFF, 0x43, 0xDE, 0x10, 0x80)
 
 	print("[!] Applying encryption")
 
@@ -312,7 +310,7 @@ def main():
 	print("[!] Allocated strings at offset: %s , %s" % (hex(string1), hex(string2)))
 
 	file.seek(0)
-	MsgBoxA 	= FindImportByName(fileStream, "MessageBoxA")
+	MsgBoxA 	= FindImportByName(fileStream, "MessageBoxW")
 	ExitProcess = FindImportByName(fileStream, "ExitProcess")
 
 	if(MsgBoxA == -1): crash("Cannot find necessary imports.")
